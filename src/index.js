@@ -46,6 +46,11 @@ window.onload = function () {
 
     });
 
+    //Add listener to challenge list
+    document.getElementById('challengeList').addEventListener('click', (event)=> {
+        console.log(event);
+    })
+
     async function renderChallenges() {
         // Clean previous list
         challengesHTML = '';
