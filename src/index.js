@@ -48,6 +48,7 @@ window.onload = function () {
     document.getElementById('challengeList').addEventListener('click', (event)=> {
         //Keep searching for the parent node to register the correct click
         const challengeId = event.target.closest('.challenge').id;
+        console.log(event.target)
         
         if(challengeId){
             if(event.target.className.indexOf('edit') !== -1){
@@ -71,7 +72,8 @@ window.onload = function () {
         let data = await resp.json();     
 
         data.forEach(challenge => {
-            challengesHTML += `<div class="row challenge" id="${challenge._id}">   
+            challengesHTML += `<div class="row challenge" 
+            id="${challenge._id}">   
             <div class="col-10">
                 <p>${challenge.course} - ${challenge.name} <span class="exp">(${challenge.points} Exp.)</span></p>
             </div>
