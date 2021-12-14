@@ -145,12 +145,26 @@ main .container .row .col-6 form button {
 
 .edit {
     border-radius: 0;
-   background-color: #ECFDF5;
+    cursor:pointer;
+    background-color: #ECFDF5;
     color: #10B981;
 }
 
-.delete {
+.trash {
+    cursor:pointer;
     border-radius: 0 4px 4px 0;
     background-color: #FEF2F2;
     color:  #EF4444;
+}
+
+.trash:hover {
+    color:  #ffffff;
+    background-color: #e01818;
+    transition:all 1s ease;
+
+}
+.edit:hover {
+    background-color: #00fd87;
+    color: #ffffff;
+    transition:all 1s ease;
 }

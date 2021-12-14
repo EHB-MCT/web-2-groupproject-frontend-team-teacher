@@ -1,5 +1,3 @@
-'use strict';
-
 let challengesList;
 let challengesHTML = "";
 
@@ -48,7 +46,21 @@ window.onload = function () {
 
     //Add listener to challenge list
     document.getElementById('challengeList').addEventListener('click', (event)=> {
-        console.log(event);
+        //Keep searching for the parent node to register the correct click
+        const challengeId = event.target.closest('.challenge').id;
+        
+        if(challengeId){
+            if(event.target.className.indexOf('edit') !== -1){
+                console.log('edit')
+                
+            }
+            
+            if(event.target.className.indexOf('trash') !== -1){
+                console.log('trash')
+            }
+
+        }
+
     })
 
     async function renderChallenges() {
@@ -64,9 +76,9 @@ window.onload = function () {
                 <p>${challenge.course} - ${challenge.name} <span class="exp">(${challenge.points} Exp.)</span></p>
             </div>
             <div class="col-1 edit">
-                <i class="fas fa-edit"></i>
+                <i class="fas fa-edit"></i> 
             </div>                         
-            <div class="col-1 delete">
+            <div class="col-1 trash">
                 <i class="fas fa-trash"></i>
             </div>
         </div>`
